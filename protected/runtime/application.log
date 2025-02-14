@@ -1,0 +1,76 @@
+2025/02/14 06:39:59 [error] [exception.CHttpException.404] CHttpException: The requested view "about/gii" was not found. in C:\xampp\htdocs\yiiblog\framework\web\actions\CViewAction.php:111
+Stack trace:
+#0 C:\xampp\htdocs\yiiblog\framework\web\actions\CViewAction.php(122): CViewAction->resolveView('about/gii')
+#1 C:\xampp\htdocs\yiiblog\framework\web\actions\CAction.php(76): CViewAction->run()
+#2 C:\xampp\htdocs\yiiblog\framework\web\CController.php(308): CAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yiiblog\framework\web\CController.php(286): CController->runAction(Object(CViewAction))
+#4 C:\xampp\htdocs\yiiblog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\xampp\htdocs\yiiblog\framework\web\CWebApplication.php(282): CController->run('page')
+#6 C:\xampp\htdocs\yiiblog\framework\web\CWebApplication.php(141): CWebApplication->runController('site/page')
+#7 C:\xampp\htdocs\yiiblog\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\yiiblog\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/yiiblog/index.php/site/page?view=about/gii
+---
+2025/02/14 06:59:30 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin". in C:\xampp\htdocs\yiiblog\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yiiblog\framework\web\CWebApplication.php(141): CWebApplication->runController('admin')
+#1 C:\xampp\htdocs\yiiblog\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yiiblog\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiiblog/index.php/admin
+---
+2025/02/14 07:00:09 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin". in C:\xampp\htdocs\yiiblog\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yiiblog\framework\web\CWebApplication.php(141): CWebApplication->runController('admin')
+#1 C:\xampp\htdocs\yiiblog\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yiiblog\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiiblog/index.php/admin
+---
+2025/02/14 07:01:43 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`blog_db`.`tbl_post`, CONSTRAINT `FK_post_author` FOREIGN KEY (`author_id`) REFERENCES `tbl_user` (`id`) ON DELETE CASCADE). The SQL statement executed was: INSERT INTO `tbl_post` (`title`, `content`, `tags`, `status`, `create_time`, `update_time`, `author_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in C:\xampp\htdocs\yiiblog\protected\controllers\PostController.php (73)
+in C:\xampp\htdocs\yiiblog\index.php (13)
+2025/02/14 07:01:43 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`blog_db`.`tbl_post`, CONSTRAINT `FK_post_author` FOREIGN KEY (`author_id`) REFERENCES `tbl_user` (`id`) ON DELETE CASCADE). The SQL statement executed was: INSERT INTO `tbl_post` (`title`, `content`, `tags`, `status`, `create_time`, `update_time`, `author_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6) in C:\xampp\htdocs\yiiblog\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yiiblog\framework\db\ar\CActiveRecord.php(1083): CDbCommand->execute()
+#1 C:\xampp\htdocs\yiiblog\framework\db\ar\CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\yiiblog\protected\controllers\PostController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yiiblog\framework\web\actions\CInlineAction.php(49): PostController->actionCreate()
+#4 C:\xampp\htdocs\yiiblog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yiiblog\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yiiblog\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yiiblog\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yiiblog\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yiiblog\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yiiblog\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yiiblog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yiiblog\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yiiblog\framework\web\CWebApplication.php(141): CWebApplication->runController('post/create')
+#14 C:\xampp\htdocs\yiiblog\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\yiiblog\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/yiiblog/index.php/post/create
+HTTP_REFERER=http://localhost/yiiblog/index.php/post/create
+---
+2025/02/14 07:28:12 [error] [exception.CException] CException: User and its behaviors do not have a method or closure named "validatePassword". in C:\xampp\htdocs\yiiblog\framework\base\CComponent.php:264
+Stack trace:
+#0 C:\xampp\htdocs\yiiblog\framework\db\ar\CActiveRecord.php(229): CComponent->__call('validatePasswor...', Array)
+#1 C:\xampp\htdocs\yiiblog\protected\components\UserIdentity.php(13): CActiveRecord->__call('validatePasswor...', Array)
+#2 C:\xampp\htdocs\yiiblog\protected\models\LoginForm.php(54): UserIdentity->authenticate()
+#3 C:\xampp\htdocs\yiiblog\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 C:\xampp\htdocs\yiiblog\framework\validators\CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 C:\xampp\htdocs\yiiblog\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), Array)
+#6 C:\xampp\htdocs\yiiblog\protected\controllers\SiteController.php(94): CModel->validate()
+#7 C:\xampp\htdocs\yiiblog\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#8 C:\xampp\htdocs\yiiblog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yiiblog\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yiiblog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yiiblog\framework\web\CWebApplication.php(282): CController->run('login')
+#12 C:\xampp\htdocs\yiiblog\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 C:\xampp\htdocs\yiiblog\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\yiiblog\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yiiblog/index.php/site/login
+HTTP_REFERER=http://localhost/yiiblog/index.php/site/login
+---
